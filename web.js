@@ -1,10 +1,11 @@
-require('fs')
+var fs = require('fs');
 
 var express = require('express');
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
+    
     b = fs.readFileSynch("index.html");
     response.send(b.toString());
 });
